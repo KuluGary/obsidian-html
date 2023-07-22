@@ -145,9 +145,6 @@ function GetHtmlFlex(fs_results, search_string, hard_search) {
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
     </div>
-    <div class="search-highlights" onclick="click_list_link(this)">'
-        {{content}}
-    </div>
 </li>
 `;
 
@@ -156,7 +153,6 @@ function GetHtmlFlex(fs_results, search_string, hard_search) {
         let element = template;
         html += element.replace('{{url}}', res.url)
                     .replace('{{title}}', res.title)
-                    .replace('{{content}}', highlight(SEARCH_DATA[res.id].content, search_string, false, 20).join(" "))
     });
     html += '</ul>'
     return html
