@@ -253,19 +253,24 @@ function LoadTableOfContents(container_div)
     if (collection.length > 0) {
         let toc = collection[0];
         if (toc.getElementsByTagName('li').length > 1) {
-
             if (toc_pane_div && no_tab_mode) {
                 let tpd = document.getElementById(toc_pane_div);
                 tpd.display = 'block';
-                tpd.innerHTML = '<span class="toc-header">Table of contents</span>' + '<div class="toc-contents">' + collection[0].innerHTML + '</div>';
+                toc.classList.add("active")
+                tpd.innerHTML = '<span class="toc-header">Contenido</span>' + '<div class="toc-contents">' + collection[0].innerHTML + '</div>';
             }
             else {
                 toc.style.display = 'block';
-                toc.innerHTML = '<h3>Table of Contents</h1>\n' + toc.innerHTML
+                toc.classList.add("active")
+                toc.innerHTML = '<h3>Contenido</h1>\n' + toc.innerHTML
             }
         }
+    } else {
+        let tpd = document.getElementById(toc_pane_div);
+        tpd.display = 'hidden';
+        tpd.parentElement.classList.remove("active")
     }
-
+    
 }
 
 function SetSidePanes() {

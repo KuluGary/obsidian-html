@@ -83,7 +83,7 @@ function run_search(search_string_id, hard_search_id) {
 
 function search(string_search, hard_search) {
     // get matches using flexsearch
-    results = GetResultsFlex(string_search, hard_search)
+    results =   (string_search, hard_search)
 
     // convert matches to a <ul><li> list
     html = GetHtmlFlex(results, string_search, hard_search)
